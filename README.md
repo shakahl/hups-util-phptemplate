@@ -1,12 +1,13 @@
-# hups-php-template
+# Introduction
 
-Extremely lightweight template class based on native PHP
+This package is a part of the Hups Framework. It is an extremely lightweight template class based on native PHP.
 
-## Installation
+
+# Installation
 
 https://packagist.org/packages/shakahl/hups-php-template
 
-## Examples
+# Examples
 
 Example for utilizing
 --
