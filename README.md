@@ -14,7 +14,7 @@ Example for utilizing
     <?php  
     $path = './templates/';  
  
-    $tpl = new \Hups\Template\PHPTemplate('/path/to/template_file.php');
+    $tpl = new \Hups\Util\PHPTemplate('/path/to/template_file.php');
     $tpl->some_title = 'User list';
     $tpl->userArray = array(
     	array(
