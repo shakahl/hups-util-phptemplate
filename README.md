@@ -5,7 +5,7 @@ This package is a part of the Hups Framework. It is an extremely lightweight tem
 
 # Installation
 
-https://packagist.org/packages/shakahl/hups-php-template
+https://packagist.org/packages/shakahl/hups-util-phptemplate
 
 # Examples
 
