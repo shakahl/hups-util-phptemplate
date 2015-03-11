@@ -1,0 +1,31 @@
+{
+    "name": "shakahl/hups-util-phptemplate",
+    "version": "0.0.0",
+    "type": "library",
+    "license": "MIT",
+    "description": "Extremely lightweight template class based on native PHP. Forked from: https://github.com/lsolesen/php-template/",
+    "keywords": [
+        "php",
+        "template",
+        "hups",
+        "lightweight",
+        "tiny"
+    ],
+    "homepage": "https://github.com/shakahl/hups-util-phptemplate",
+    "authors": [
+        {
+            "name": "Szélpál Soma",
+            "email": "szelpalsoma+hups@gmail.com",
+            "homepage": "https://github.com/shakahl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hups\\Util\\": "src/Hups/Util/"
+        }
+    }
+}
