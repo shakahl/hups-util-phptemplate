@@ -50,7 +50,7 @@ class PHPTemplate
 
         if ($dir !== null) {
             if (!is_dir($dir))
-                throw new Exception("Error Processing Request");
+                throw new Exception("The specified template directory is not a directory.");
             $this->dir = $dir;
         }
     }
@@ -74,7 +74,7 @@ class PHPTemplate
     {
         if ($dir !== null) {
             if (!is_dir($dir))
-                throw new Exception("Error Processing Request");
+                throw new Exception("The specified template directory is not a directory.");
             $this->dir = $dir;
         }
         return $this;
