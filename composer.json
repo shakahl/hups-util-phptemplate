@@ -1,6 +1,6 @@
 {
     "name": "shakahl/hups-util-phptemplate",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "type": "library",
     "license": "MIT",
     "description": "Extremely lightweight template class based on native PHP. Forked from: https://github.com/lsolesen/php-template/",
