@@ -2,14 +2,8 @@
 
 use Hups\Util\PHPTemplate;
 
-class ViewTest extends PHPUnit_Framework_TestCase
+class PHPTemplateTest extends PHPUnit_Framework_TestCase
 {
-	/*
-	public function tearDown()
-	{
-	}
-	*/
-
 	public function testDataCanBeSet()
 	{
 		$tpl = new PHPTemplate();
@@ -29,6 +23,32 @@ class ViewTest extends PHPUnit_Framework_TestCase
 		$this->setExpectedException('Exception');
 
 		$tpl = new PHPTemplate(__DIR__ . '/nonexistent_directory');
+	}
+
+	public function testTemplateRenderedCorrectly()
+	{
+		$tpl = new PHPTemplate(__DIR__);
+
+		$tpl->set('test_var_1', 'correct');
+		$renderedString = trim($tpl->fetch('test1.tpl.phtml'));
+
+		$this->assertEquals('var:correct', $renderedString);
+	}
+
+	public function testTemplateDisplayedCorrectly()
+	{
+		$tpl = new PHPTemplate(__DIR__);
+
+		$tpl->set('test_var_1', 'correct');
+
+		ob_start();
+		$tpl->display('test1.tpl.phtml');
+		$renderedString = ob_get_contents();
+		ob_end_clean();
+
+		$renderedString = trim($renderedString);
+
+		$this->assertEquals('var:correct', $renderedString);
 	}
 }
 
