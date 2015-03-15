@@ -38,21 +38,39 @@ class PHPTemplate
      * Dir to the template file
      * @var string
      */
-    protected $dir = null; /// Dir to the templates
+    protected $dir = []; /// Dir to the templates
 
     /**
      * Constructor
      * @param string
      */
-    public function __construct($dir = null)
+    public function __construct($templateDir = null)
     {
         $this->vars = array();
 
-        if ($dir !== null) {
-            if (!is_dir($dir))
-                throw new Exception("The specified template directory is not a directory.");
-            $this->dir = $dir;
+        if ($templateDir && is_array($templateDir))
+        {
+            foreach ($templateDir as $d)
+            {
+                $this->addDirectory($d);
+            }
         }
+        elseif ($templateDir)
+        {
+            $this->addDirectory($templateDir);
+        }
+    }
+
+    public function findTemplateFile($filename)
+    {
+        foreach ($this->dir as $index => $dirname)
+        {
+            if (is_dir($dirname) && file_exists($dirname . '/' . $filename)) {
+                return $dirname . '/' . $filename;
+            }
+        }
+
+        return null;
     }
 
     /**
@@ -70,13 +88,13 @@ class PHPTemplate
      * @param string
      * @return Hups\Util\PHPTemplate
      */
-    public function setDir($dir = null)
-    {
-        if ($dir !== null) {
-            if (!is_dir($dir))
-                throw new Exception("The specified template directory is not a directory.");
-            $this->dir = $dir;
-        }
+    public function addDirectory($dirname)
+    {        
+        if (!is_dir($dirname))
+            throw new Exception("Invalid directory: $dirname");
+
+        $this->dir[] = $dirname;
+        
         return $this;
     }
 
@@ -141,13 +159,15 @@ class PHPTemplate
      */
     public function fetch($file)
     {
-        if (!empty($this->dir)) {
-            $file = rtrim($this->dir, '/ ') . '/' . $file;
+        $templateFile = $this->findTemplateFile($file);
+
+        if (empty($templateFile)) {
+            throw new Exception("Template file does not exists: $file");            
         }
 
         extract($this->vars);
         ob_start();
-        include $file;
+        include $templateFile;
         $buffer = ob_get_contents();
         ob_end_clean();
         return $buffer;
