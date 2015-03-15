@@ -22,7 +22,6 @@ https://packagist.org/packages/shakahl/hups-util-phptemplate
 
 Usage example
 -------------
-
  
 
 ### Example for usage
