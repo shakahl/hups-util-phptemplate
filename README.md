@@ -1,8 +1,6 @@
 PHPTemplate
 ===========
 
- 
-
 Introduction
 ------------
 
@@ -18,6 +16,19 @@ Installation
 
 https://packagist.org/packages/shakahl/hups-util-phptemplate
 
+Add `shakahl/hups-util-phptemplate` as a requirement to `composer.json`:
+
+```javascript
+{
+    "require": {
+        "shakahl/hups-util-phptemplate": "dev-master"
+    }
+}
+```
+
+Update your packages with `composer update` or install with `composer install`.
+
+You can also add the package using `composer require shakahl/hups-util-phptemplate` and later specifying the version you want (for now, `dev-master` is your best bet).
  
 
 Usage example
