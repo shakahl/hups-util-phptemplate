@@ -90,7 +90,6 @@ Unit testing
 ### Under Windows
 
 `$ composer update`
-
 `$ vendor/bin/phpunit​.bat`
 
  
@@ -98,7 +97,6 @@ Unit testing
 ### Under Linux
 
 `$ composer update`
-
 `$ vendor/bin/phpunit​`
 
  
