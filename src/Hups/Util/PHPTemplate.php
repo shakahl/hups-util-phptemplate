@@ -104,6 +104,21 @@ class PHPTemplate
     }
 
     /**
+     * Get previously set variable
+     * @param  string $key
+     * @param  mixed $default
+     * @return mixed
+     */
+    public function get($key, $default = null)
+    {
+        if (array_key_exists($key, $this->vars)) {
+            return $this->vars[$key];
+        }
+
+        return $default;
+    }
+
+    /**
      * Set a bunch of variables at once using an associative array.
      * @param array $vars  array of vars to set
      * @param bool  $clear whether to completely overwrite the existing vars
