@@ -61,6 +61,11 @@ class PHPTemplate
         }
     }
 
+    /**
+     * Find a file in the template directories
+     * @param  string $filename
+     * @return string|null
+     */
     public function findTemplateFile($filename)
     {
         foreach ($this->dir as $index => $dirname)
@@ -84,7 +89,7 @@ class PHPTemplate
     }
 
     /**
-     * Set template directory
+     * Ads a template directory 
      * @param string
      * @return Hups\Util\PHPTemplate
      */
