@@ -84,19 +84,19 @@ $tpl->display('template-tpl.php');
 
 Unit testing
 ------------
-
  
 
 ### Under Windows
 
-`$ composer update`
-`$ vendor/bin/phpunit​.bat`
-
+```
+$ composer update
+$ vendor/bin/phpunit​.bat
+```
  
 
 ### Under Linux
 
-`$ composer update`
-`$ vendor/bin/phpunit​`
-
- 
+```
+$ composer update
+$ vendor/bin/phpunit​
+```
