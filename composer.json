@@ -11,6 +11,12 @@
         "lightweight",
         "tiny"
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/shakahl/hups-util-phptemplate.git"
+        }
+    ],
     "homepage": "https://github.com/shakahl/hups-util-phptemplate",
     "authors": [
         {
